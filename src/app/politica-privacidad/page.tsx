@@ -9,7 +9,7 @@ export default function PoliticaPrivacidad() {
         <h1 className="text-3xl md:text-5xl font-extrabold text-[#000917] mb-2 tracking-tight">Política de Privacidad</h1>
         <p className="text-sm md:text-base text-gray-500 mb-10 pb-8 border-b border-gray-100">
           <strong>Última actualización:</strong> 2026<br/>
-          <strong>Empresa:</strong> DocConmigo<br/>
+          <strong>Empresa:</strong> docconmigo<br/>
           <strong>País:</strong> Colombia
         </p>
         
@@ -17,7 +17,7 @@ export default function PoliticaPrivacidad() {
           <section>
             <h2 className="text-2xl font-bold text-secondary mb-4">1. Introducción y Marco Normativo</h2>
             <p>
-              En <strong>DocConmigo</strong> valoramos y respetamos la privacidad de nuestros usuarios y pacientes. Esta Política de Privacidad describe cómo recopilamos, utilizamos, almacenamos, circulamos y protegemos la información personal que los usuarios proporcionan al utilizar nuestro sitio web, plataformas digitales o servicios asociados en consulta.
+              En <strong>docconmigo</strong> valoramos y respetamos la privacidad de nuestros usuarios y pacientes. Esta Política de Privacidad describe cómo recopilamos, utilizamos, almacenamos, circulamos y protegemos la información personal que los usuarios proporcionan al utilizar nuestro sitio web, plataformas digitales o servicios asociados en consulta.
             </p>
             <p className="mt-4">
               Esta política ha sido elaborada en estricto cumplimiento de la normativa colombiana vigente en materia de protección de datos personales, especialmente la <strong>Ley Estatutaria 1581 de 2012 (Habeas Data)</strong>, el <strong>Decreto 1377 de 2013</strong> (compilado en el Decreto 1074 de 2015), la Ley 1266 de 2008 y la normativa relacionada con la protección de historias clínicas (Resolución 1995 de 1999 y Resolución 839 de 2017 del Ministerio de Salud).
@@ -101,7 +101,7 @@ export default function PoliticaPrivacidad() {
           <section>
             <h2 className="text-2xl font-bold text-secondary mb-4">6. Compartir información con terceros</h2>
             <p>
-              <strong>En DocConmigo nunca vendemos ni alquilamos su base de información personal a terceros.</strong> Nuestra política estipula que la información puede ser compartida exclusiva y excepcionalmente en estos panoramas:
+              <strong>En docconmigo nunca vendemos ni alquilamos su base de información personal a terceros.</strong> Nuestra política estipula que la información puede ser compartida exclusiva y excepcionalmente en estos panoramas:
             </p>
             <ul className="list-disc pl-6 mt-3 space-y-2 marker:text-blue-500">
               <li>Cuando sea indispensablemente necesario para la ejecución o prestación de los servicios tecnológicos o comerciales subcontratados que soportan la actividad de nuestra Entidad de Salud (como software de Historias Clínicas Electrónicas (EHR), proveedores de hosting en la nube, softwares de correo, o procesadores de pasarelas de pago transaccionales). Todas estas empresas terceras fungen exclusivamente como "Encargados" bajo juramente de proteger estas bases de datos en nombre nuestro.</li>
@@ -155,7 +155,7 @@ export default function PoliticaPrivacidad() {
           <section>
             <h2 className="text-2xl font-bold text-secondary mb-4">11. Enlaces a sitios externos o foráneos</h2>
             <p>
-              Nuestros desarrollos frontales u orgánicos, artículos en perfiles informativos de interés público, así como el propio espacio corporativo en redes (Facebook, IG, etc.) pueden disponer accesos URL ajenos a la propiedad del consorcio de DocConmigo. Al respecto, el paciente navega abandonando nuestra propiedad raíz y la salvaguardia inherente de este Tratamiento y por lo expuesto se aconseja consultar, de mano propia, toda la Declaración, cookies, metadatos y uso comercial sobre tales plataformas donde nuestra jurisprudencia, alcance de enmiendas de garantía general u opiniones se extinguen.
+              Nuestros desarrollos frontales u orgánicos, artículos en perfiles informativos de interés público, así como el propio espacio corporativo en redes (Facebook, IG, etc.) pueden disponer accesos URL ajenos a la propiedad del consorcio de docconmigo. Al respecto, el paciente navega abandonando nuestra propiedad raíz y la salvaguardia inherente de este Tratamiento y por lo expuesto se aconseja consultar, de mano propia, toda la Declaración, cookies, metadatos y uso comercial sobre tales plataformas donde nuestra jurisprudencia, alcance de enmiendas de garantía general u opiniones se extinguen.
             </p>
           </section>
 
@@ -175,7 +175,7 @@ export default function PoliticaPrivacidad() {
               <ul className="space-y-3">
                 <li className="flex items-center gap-3">
                   <div className="font-bold text-gray-900 w-24">Entidad:</div>
-                  <div className="text-gray-700">DocConmigo (Representación Medica)</div>
+                  <div className="text-gray-700">docconmigo (Representación Medica)</div>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="font-bold text-gray-900 w-24">Email (PQR):</div>

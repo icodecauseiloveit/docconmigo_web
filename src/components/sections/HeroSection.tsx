@@ -9,7 +9,7 @@ export default function HeroSection() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img 
           src="/hero.png" 
-          alt="DocConmigo Hero Background" 
+          alt="docconmigo Hero Background" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#e0f0f5]/85 via-white/75 to-white/60"></div>
@@ -28,7 +28,7 @@ export default function HeroSection() {
           </h1>
           
           <p className="text-lg md:text-xl text-gray-700 font-medium mb-10 leading-relaxed mt-10">
-            En DocConmigo entendemos tu historia completa para ayudarte a transformar tu salud. No solo tratamos síntomas, buscamos el origen.
+            En docconmigo entendemos tu historia completa para ayudarte a transformar tu salud. No solo tratamos síntomas, buscamos el origen.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

@@ -75,7 +75,7 @@ export default function BenefitsSection() {
                     <HeartHandshake className="text-accent h-8 w-8" />
                   </div>
                   <div>
-                    <h5 className="font-bold text-secondary">Modelo DocConmigo</h5>
+                    <h5 className="font-bold text-secondary">Modelo docconmigo</h5>
                     <p className="text-sm text-gray-600 font-medium">Escucha activa profunda, intervenciones integrales, tratamiento del ecosistema corporal.</p>
                   </div>
                 </div>

@@ -9,8 +9,9 @@ import WhatsAppButton from "@/components/ui/WhatsAppButton";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "DocConmigo | Recupera tu salud desde la raíz",
-  description: "En DocConmigo entendemos tu historia completa para ayudarte a transformar tu salud. Medicina funcional y enfoque integral.",
+  title: "docconmigo | Recupera tu salud desde la raíz",
+  description: "En docconmigo entendemos tu historia completa para ayudarte a transformar tu salud. Medicina funcional y enfoque integral.",
+  icons: { icon: '/dcm.ico' },
 };
 
 export default function RootLayout({

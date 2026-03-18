@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2 w-fit">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo-docconmigo-web.png" alt="DocConmigo Logo" className="h-14 w-auto brightness-0 invert" />
+            <img src="/logo-docconmigo-web.png" alt="docconmigo Logo" className="h-14 w-auto brightness-0 invert" />
           </div>
         </div>
         
@@ -42,7 +42,7 @@ export default function Footer() {
       </div>
       
       <div className="container mx-auto px-4 mt-8 pt-8 border-t border-white/20 text-sm text-center text-gray-300">
-        &copy; {new Date().getFullYear()} DocConmigo. Todos los derechos reservados.
+        &copy; {new Date().getFullYear()} docconmigo. Todos los derechos reservados.
       </div>
     </footer>
   );

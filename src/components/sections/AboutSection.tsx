@@ -9,7 +9,7 @@ export default function AboutSection() {
             <h2 className="text-sm font-bold tracking-wider text-accent uppercase mb-2">Sobre nuestro enfoque</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-secondary mb-6">Medicina que te entiende</h3>
             <p className="text-gray-600 text-lg leading-relaxed">
-              En DocConmigo creemos que la salud es más que la ausencia de enfermedad. Es un estado de vitalidad, claridad mental y equilibrio emocional que surge cuando le damos al cuerpo lo que necesita y quitamos lo que le hace daño.
+              En docconmigo creemos que la salud es más que la ausencia de enfermedad. Es un estado de vitalidad, claridad mental y equilibrio emocional que surge cuando le damos al cuerpo lo que necesita y quitamos lo que le hace daño.
             </p>
           </div>
 

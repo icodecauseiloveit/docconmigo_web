@@ -12,7 +12,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 h-32 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 flex-shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo-docconmigo-web.png" alt="DocConmigo Logo" className="h-20 w-auto object-contain" />
+          <img src="/logo-docconmigo-web.png" alt="docconmigo Logo" className="h-20 w-auto object-contain" />
         </Link>
         
         {/* Desktop Navigation (Screen > 1024px) */}

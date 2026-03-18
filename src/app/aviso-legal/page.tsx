@@ -8,7 +8,7 @@ export default function AvisoLegal() {
           <section>
             <h2 className="text-xl font-bold text-secondary mb-3">1. Identificación del responsable</h2>
             <p>
-              El titular y responsable de este sitio web es DocConmigo, clínica especializada en medicina funcional. 
+              El titular y responsable de este sitio web es docconmigo, clínica especializada en medicina funcional. 
               Para cualquier consulta, puede contactarnos en {process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'docconmigo@gmail.com'}.
             </p>
           </section>
@@ -24,7 +24,7 @@ export default function AvisoLegal() {
           <section>
             <h2 className="text-xl font-bold text-secondary mb-3">3. Responsabilidad</h2>
             <p>
-              DocConmigo no se hace responsable de posibles decisiones tomadas por los usuarios basándose únicamente en la información de este sitio. 
+              docconmigo no se hace responsable de posibles decisiones tomadas por los usuarios basándose únicamente en la información de este sitio. 
               Para un diagnóstico y tratamiento adecuado, se requiere de una consulta médica formal.
             </p>
           </section>

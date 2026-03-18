@@ -8,14 +8,14 @@ export default function CondicionesContratacion() {
           <section>
             <h2 className="text-xl font-bold text-secondary mb-3">Naturaleza del servicio</h2>
             <p>
-              DocConmigo presta servicios de asesoría, evaluación y acompañamiento en medicina funcional. Al agendar y asistir a nuestras consultas, usted acepta que el enfoque puede diferir de las prácticas médicas convencionales y está centrado en abordar las causas subyacentes de los desequilibrios de salud mediante cambios de hábitos y nutrición.
+              docconmigo presta servicios de asesoría, evaluación y acompañamiento en medicina funcional. Al agendar y asistir a nuestras consultas, usted acepta que el enfoque puede diferir de las prácticas médicas convencionales y está centrado en abordar las causas subyacentes de los desequilibrios de salud mediante cambios de hábitos y nutrición.
             </p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-secondary mb-3">Responsabilidades</h2>
             <p>
-              El paciente es responsable de proporcionar información completa y veraz sobre su historial médico y seguir las recomendaciones consensuadas. DocConmigo se compromete a brindar orientación y acompañamiento personalizado basándose en la evidencia y el criterio clínico.
+              El paciente es responsable de proporcionar información completa y veraz sobre su historial médico y seguir las recomendaciones consensuadas. docconmigo se compromete a brindar orientación y acompañamiento personalizado basándose en la evidencia y el criterio clínico.
             </p>
           </section>
 
@@ -31,7 +31,7 @@ export default function CondicionesContratacion() {
           <section>
             <h2 className="text-xl font-bold text-secondary mb-3">Limitación de responsabilidad</h2>
             <p>
-              DocConmigo garantiza la diligencia y profesionalidad en la prestación de sus servicios médicos. No obstante, al depender en gran medida del seguimiento del paciente y factores biológicos individuales, no se puede garantizar resultados específicos sobre tratamientos.
+              docconmigo garantiza la diligencia y profesionalidad en la prestación de sus servicios médicos. No obstante, al depender en gran medida del seguimiento del paciente y factores biológicos individuales, no se puede garantizar resultados específicos sobre tratamientos.
             </p>
           </section>
         </div>
