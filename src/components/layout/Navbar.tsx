@@ -3,7 +3,7 @@ import { Menu } from 'lucide-react';
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container mx-auto px-4 h-32 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -11,10 +11,10 @@ export default function Navbar() {
         </Link>
         
         <nav className="hidden md:flex gap-10 items-center">
-          <Link href="/" className="text-lg font-semibold hover:text-primary transition-colors">Inicio</Link>
-          <Link href="/#servicios" className="text-lg font-semibold hover:text-primary transition-colors">Servicios</Link>
-          <Link href="/#beneficios" className="text-lg font-semibold hover:text-primary transition-colors">Beneficios</Link>
-          <Link href="/#contacto" className="text-lg font-semibold hover:text-primary transition-colors">Contacto</Link>
+          <Link href="/" className="text-lg font-normal hover:text-primary transition-colors">Inicio</Link>
+          <Link href="/#servicios" className="text-lg font-normal hover:text-primary transition-colors">Servicios</Link>
+          <Link href="/#beneficios" className="text-lg font-normal hover:text-primary transition-colors">Beneficios</Link>
+          <Link href="/#contacto" className="text-lg font-normal hover:text-primary transition-colors">Contacto</Link>
           
           <Link 
             href="/#contacto" 
