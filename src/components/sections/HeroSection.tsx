@@ -12,7 +12,7 @@ export default function HeroSection() {
           alt="DocConmigo Hero Background" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#e0f0f5]/96 via-white/92 to-white/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#e0f0f5]/85 via-white/75 to-white/60"></div>
       </div>
 
       {/* Background decoration */}
