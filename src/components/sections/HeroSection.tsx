@@ -20,8 +20,8 @@ export default function HeroSection() {
         <div className="w-[600px] h-[600px] rounded-full bg-primary blur-3xl mix-blend-multiply"></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
+      <div className="container mx-auto px-4 relative z-10 text-center">
+        <div className="max-w-5xl mx-auto">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-secondary tracking-tighter mb-8 relative leading-none">
             Recupera tu salud <br className="hidden md:block"/>desde la raíz
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-highlight rounded-full"></div>
