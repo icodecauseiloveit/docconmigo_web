@@ -1,0 +1,34 @@
+import Link from 'next/link';
+import { Menu } from 'lucide-react';
+
+export default function Navbar() {
+  return (
+    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-docconmigo-web.png" alt="DocConmigo Logo" className="h-8 w-auto" />
+          <span className="font-bold text-xl text-secondary">DocConmigo</span>
+        </Link>
+        
+        <nav className="hidden md:flex gap-6 items-center">
+          <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">Inicio</Link>
+          <Link href="/#servicios" className="text-sm font-medium hover:text-primary transition-colors">Servicios</Link>
+          <Link href="/#beneficios" className="text-sm font-medium hover:text-primary transition-colors">Beneficios</Link>
+          <Link href="/#contacto" className="text-sm font-medium hover:text-primary transition-colors">Contacto</Link>
+          
+          <Link 
+            href="/#contacto" 
+            className="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-md text-sm font-medium transition-colors shadow-sm"
+          >
+            Agendar cita
+          </Link>
+        </nav>
+
+        <button className="md:hidden p-2" aria-label="Menu">
+          <Menu className="h-6 w-6 text-foreground" />
+        </button>
+      </div>
+    </header>
+  );
+}
