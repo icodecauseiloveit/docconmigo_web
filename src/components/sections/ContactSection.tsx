@@ -17,10 +17,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contacto" className="py-24 bg-[#000917] text-white relative overflow-hidden">
-      {/* Radial Gradient Background */}
+    <section id="contacto" className="py-24 bg-gradient-to-br from-[#000917] via-[#164894]/20 to-[#000917] text-white relative overflow-hidden">
+      {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(50,104,139,0.15)_0%,transparent_70%)]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(22,72,148,0.2)_0%,transparent_70%)]"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
