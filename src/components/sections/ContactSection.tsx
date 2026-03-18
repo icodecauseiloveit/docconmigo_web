@@ -65,7 +65,7 @@ export default function ContactSection() {
           </div>
 
           <div className="mt-20 max-w-2xl mx-auto">
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-10 md:p-14 rounded-[3rem] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)] relative overflow-hidden group hover:border-white/20 transition-all duration-500">
+            <div className="bg-[#03112b]/40 backdrop-blur-2xl border border-white/20 p-10 md:p-14 rounded-[2rem] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.6)] relative overflow-hidden group hover:border-white/30 transition-all duration-500">
               
               {isSubmitted ? (
                 <div className="py-16 flex flex-col items-center justify-center text-center space-y-8 animate-in fade-in zoom-in duration-500">
