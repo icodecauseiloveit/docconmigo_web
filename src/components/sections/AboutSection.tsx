@@ -1,4 +1,4 @@
-import { Leaf, Award } from 'lucide-react';
+import { Leaf } from 'lucide-react';
 
 export default function AboutSection() {
   return (

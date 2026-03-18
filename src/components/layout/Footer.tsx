@@ -11,7 +11,7 @@ export default function Footer() {
             <img src="/logo-docconmigo-web.png" alt="DocConmigo Logo" className="h-8 w-auto brightness-0 invert" />
             <span className="font-bold text-xl">DocConmigo</span>
           </div>
-          <p className="text-sm font-medium italic">"Vive sano, vive feliz"</p>
+          <p className="text-sm font-medium italic">&quot;Vive sano, vive feliz&quot;</p>
         </div>
         
         <div>
