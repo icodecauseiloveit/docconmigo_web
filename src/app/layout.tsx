@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: "docconmigo | Recupera tu salud desde la raíz",
   description: "En docconmigo entendemos tu historia completa para ayudarte a transformar tu salud. Medicina funcional y enfoque integral.",
   icons: { icon: '/dcm.ico' },
+  verification: {
+    other: {
+      'facebook-domain-verification': ['suogd5blktws0v8crwhnllg2kz748f'],
+    },
+  },
 };
 
 export default function RootLayout({
