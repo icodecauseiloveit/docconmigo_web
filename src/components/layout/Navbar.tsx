@@ -10,10 +10,22 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
+      const contactSection = document.getElementById('contacto');
+      if (contactSection) {
+        // El navbar mide aproximadamente 128px (h-32)
+        const rect = contactSection.getBoundingClientRect();
+        if (rect.top <= 128) {
+          setIsScrolled(true);
+        } else {
+          setIsScrolled(false);
+        }
       } else {
-        setIsScrolled(false);
+        // Comportamiento base si no hay sección de contacto en la página
+        if (window.scrollY > 50) {
+          setIsScrolled(true);
+        } else {
+          setIsScrolled(false);
+        }
       }
     };
 
