@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <header className="fixed top-0 z-50 w-full bg-white/30 backdrop-blur-lg border-b border-white/20">
       <div className="container mx-auto px-4 h-32 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 flex-shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
