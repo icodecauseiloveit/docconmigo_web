@@ -1,7 +1,7 @@
-import Link from 'next/link';
 "use client";
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
