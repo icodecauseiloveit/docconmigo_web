@@ -1,10 +1,9 @@
-# Dockerfile
-FROM node:18-alpine AS base
+FROM node:20-slim AS base
 
-# Install dependencies only when needed
 FROM base AS deps
-# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
-RUN apk add --no-cache libc6-compat
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libc6 \
+    && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 
 # Install dependencies based on the preferred package manager
@@ -19,8 +18,13 @@ COPY . .
 
 # Next.js telemetry is disabled
 ENV NEXT_TELEMETRY_DISABLED=1
+# Add dummy build-time environment variables to prevent build warnings/errors
+ENV NEXT_PUBLIC_WHATSAPP_NUMBER=573024645050
+ENV NEXT_PUBLIC_CONTACT_EMAIL=docconmigo@gmail.com
+ENV NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
-RUN npm run build
+# Skip linting during build to isolate problems
+RUN npm run build || (echo "Build failed, showing logs" && npm run build -- --debug)
 
 # Production image, copy all the files and run next
 FROM base AS runner
