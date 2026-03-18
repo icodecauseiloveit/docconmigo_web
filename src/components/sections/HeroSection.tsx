@@ -3,9 +3,20 @@ import { ArrowRight } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-[#e0f0f5] to-white pt-24 pb-32 md:pt-32 md:pb-40 overflow-hidden">
+    <section className="relative pt-24 pb-32 md:pt-48 md:pb-60 overflow-hidden min-h-[80vh] flex items-center">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img 
+          src="/hero.png" 
+          alt="DocConmigo Hero Background" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#e0f0f5]/90 via-white/80 to-white/70"></div>
+      </div>
+
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 opacity-20">
+      <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 opacity-10">
         <div className="w-[600px] h-[600px] rounded-full bg-primary blur-3xl mix-blend-multiply"></div>
       </div>
       
