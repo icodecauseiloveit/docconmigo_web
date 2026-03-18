@@ -86,7 +86,7 @@ export default function ContactSection() {
                         type="text" 
                         id="name" 
                         required 
-                        className="w-full bg-black/20 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:bg-black/40 transition-all text-white placeholder:text-white/20"
+                        className="w-full bg-black/60 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:bg-black/80 transition-all text-white placeholder:text-white/20"
                         placeholder="Tu nombre"
                       />
                     </div>
@@ -96,7 +96,7 @@ export default function ContactSection() {
                         type="email" 
                         id="email" 
                         required 
-                        className="w-full bg-black/20 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:bg-black/40 transition-all text-white placeholder:text-white/20"
+                        className="w-full bg-black/60 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:bg-black/80 transition-all text-white placeholder:text-white/20"
                         placeholder="tu@email.com"
                       />
                     </div>
@@ -108,7 +108,7 @@ export default function ContactSection() {
                       type="tel" 
                       id="phone" 
                       required 
-                      className="w-full bg-black/20 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:bg-black/40 transition-all text-white placeholder:text-white/20"
+                      className="w-full bg-black/60 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:bg-black/80 transition-all text-white placeholder:text-white/20"
                       placeholder="+57 300 000 0000"
                     />
                   </div>
@@ -118,7 +118,7 @@ export default function ContactSection() {
                     <textarea 
                       id="message" 
                       rows={4}
-                      className="w-full bg-black/20 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:bg-black/40 transition-all text-white placeholder:text-white/20 resize-none"
+                      className="w-full bg-black/60 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:bg-black/80 transition-all text-white placeholder:text-white/20 resize-none"
                       placeholder="Cuéntanos un poco por qué nos contactas..."
                     ></textarea>
                   </div>
