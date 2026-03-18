@@ -17,7 +17,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contacto" className="py-24 bg-gradient-to-r from-blue-800 to-indigo-900 text-white relative overflow-hidden">
+    <section id="contacto" className="py-24 bg-gradient-to-bl from-[#0f172a] via-[#1e1a78] to-[#0f172a] text-white relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(22,72,148,0.2)_0%,transparent_70%)]"></div>
