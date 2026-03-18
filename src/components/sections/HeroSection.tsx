@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative pt-24 pb-32 md:pt-48 md:pb-60 overflow-hidden min-h-[80vh] flex items-center">
+    <section className="relative pt-24 pb-20 md:pt-32 md:pb-32 overflow-hidden min-h-[60vh] flex items-center">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
