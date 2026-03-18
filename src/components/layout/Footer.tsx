@@ -6,10 +6,9 @@ export default function Footer() {
     <footer className="bg-[#000917] text-white py-12">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-2 bg-white/10 p-2 rounded w-fit">
+          <div className="flex items-center gap-2 bg-white/5 p-3 rounded-xl w-fit border border-white/10 backdrop-blur-sm">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo-docconmigo-web.png" alt="DocConmigo Logo" className="h-8 w-auto brightness-0 invert" />
-            <span className="font-bold text-xl">DocConmigo</span>
+            <img src="/logo-docconmigo-web.png" alt="DocConmigo Logo" className="h-10 w-auto brightness-0 invert" />
           </div>
           <p className="text-sm font-medium italic">&quot;Vive sano, vive feliz&quot;</p>
         </div>
