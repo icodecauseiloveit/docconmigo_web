@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
@@ -6,11 +7,14 @@ export default function HeroSection() {
     <section className="relative pt-40 pb-24 md:pt-48 md:pb-40 overflow-hidden min-h-[80vh] flex items-center">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img 
+        <Image 
           src="/hero.png" 
           alt="docconmigo Hero Background" 
-          className="w-full h-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+          quality={85}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#e0f0f5]/85 via-white/75 to-white/60"></div>
       </div>
