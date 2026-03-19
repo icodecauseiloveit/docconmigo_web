@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   icons: { icon: '/dcm.ico' },
   openGraph: {
-    title: "Le damos a tu salud el tiempo, la atención y la profundidad que realmente merece",
+    title: "Tu salud merece más que una consulta rápida",
     description: "No nos enfocamos solo en tus síntomas; exploramos también tu entorno, hábitos y estilo de vida. Por eso nos tomamos el tiempo necesario para conocerte a profundidad y llegar a la raíz de tu condición.",
     url: "https://docconmigo.com",
     siteName: "docconmigo",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Le damos a tu salud el tiempo, la atención y la profundidad que realmente merece",
+    title: "Tu salud merece más que una consulta rápida",
     description: "No nos enfocamos solo en tus síntomas; exploramos también tu entorno, hábitos y estilo de vida. Por eso nos tomamos el tiempo necesario para conocerte a profundidad y llegar a la raíz de tu condición.",
     images: ["/og-image.png"],
   },
