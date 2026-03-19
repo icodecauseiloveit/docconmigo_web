@@ -49,6 +49,7 @@ export default function Navbar() {
           <Link href="/#servicios" className="text-lg font-normal hover:text-primary transition-colors">Servicios</Link>
           <Link href="/#beneficios" className="text-lg font-normal hover:text-primary transition-colors">Beneficios</Link>
           <Link href="/#contacto" className="text-lg font-normal hover:text-primary transition-colors">Contacto</Link>
+          <Link href="https://mail.docconmigo.com/webmail" target="_blank" rel="noopener noreferrer" className="text-lg font-normal hover:text-primary transition-colors">Webmail</Link>
           
           <Link 
             href="/#contacto" 
@@ -85,6 +86,7 @@ export default function Navbar() {
             <Link onClick={() => setIsOpen(false)} href="/#servicios" className="text-xl font-medium py-2 border-b border-gray-50">Servicios</Link>
             <Link onClick={() => setIsOpen(false)} href="/#beneficios" className="text-xl font-medium py-2 border-b border-gray-50">Beneficios</Link>
             <Link onClick={() => setIsOpen(false)} href="/#contacto" className="text-xl font-medium py-2 border-b border-gray-50">Contacto</Link>
+            <Link onClick={() => setIsOpen(false)} href="https://mail.docconmigo.com/webmail" target="_blank" rel="noopener noreferrer" className="text-xl font-medium py-2 border-b border-gray-50">Webmail</Link>
             <Link 
               onClick={() => setIsOpen(false)}
               href="/#contacto" 
