@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "docconmigo",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://docconmigo.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "docconmigo - Medicina Funcional",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "docconmigo | Recupera tu salud desde la raíz",
     description: "Recupera tu salud desde la raíz con un enfoque integral y personalizado.",
-    images: ["/og-image.png"],
+    images: ["https://docconmigo.com/og-image.png"],
   },
   verification: {
     other: {
