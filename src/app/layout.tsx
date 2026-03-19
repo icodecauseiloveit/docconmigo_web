@@ -9,12 +9,12 @@ import WhatsAppButton from "@/components/ui/WhatsAppButton";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "docconmigo | Recupera tu salud desde la raíz",
-  description: "Deja de tratar síntomas: descubre la causa real y recupera tu salud desde la raíz",
+  title: "Le damos a tu salud el tiempo, la atención y la profundidad que realmente merece",
+  description: "No nos enfocamos solo en tus síntomas; exploramos también tu entorno, hábitos y estilo de vida. Por eso nos tomamos el tiempo necesario para conocerte a profundidad y llegar a la raíz de tu condición.",
   icons: { icon: '/dcm.ico' },
   openGraph: {
-    title: "docconmigo | Recupera tu salud desde la raíz",
-    description: "Deja de tratar síntomas: descubre la causa real y recupera tu salud desde la raíz",
+    title: "Le damos a tu salud el tiempo, la atención y la profundidad que realmente merece",
+    description: "No nos enfocamos solo en tus síntomas; exploramos también tu entorno, hábitos y estilo de vida. Por eso nos tomamos el tiempo necesario para conocerte a profundidad y llegar a la raíz de tu condición.",
     url: "https://docconmigo.com",
     siteName: "docconmigo",
     images: [
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "docconmigo | Recupera tu salud desde la raíz",
-    description: "Deja de tratar síntomas: descubre la causa real y recupera tu salud desde la raíz",
+    title: "Le damos a tu salud el tiempo, la atención y la profundidad que realmente merece",
+    description: "No nos enfocamos solo en tus síntomas; exploramos también tu entorno, hábitos y estilo de vida. Por eso nos tomamos el tiempo necesario para conocerte a profundidad y llegar a la raíz de tu condición.",
     images: ["https://docconmigo.com/og-image.png"],
   },
   verification: {
