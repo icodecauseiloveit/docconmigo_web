@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Flame, CheckCheck } from 'lucide-react';
+import { saveFormSubmission } from '@/app/formulario/actions';
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -114,6 +115,14 @@ export default function FormularioTypeform() {
         answers['inversion'] === "Sí";
       setIsHotLead(hot);
       setIsCompleted(true);
+      // Save to Supabase
+      saveFormSubmission(answers, hot).then((res: { success: boolean; error?: string }) => {
+        if (!res.success) {
+          console.error("Failed to save submission:", res.error);
+        } else {
+          console.log("Form saved to Supabase successfully.");
+        }
+      });
     }
   };
 
