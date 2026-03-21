@@ -52,7 +52,7 @@ export default function Navbar() {
           <Link href="https://mail.docconmigo.com/webmail" target="_blank" rel="noopener noreferrer" className="text-lg font-normal hover:text-primary transition-colors">Webmail</Link>
           
           <Link 
-            href="/#contacto" 
+            href="/formulario" 
             className="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-xl text-lg font-bold transition-all shadow-md hover:scale-105"
           >
             Agendar cita
@@ -89,7 +89,7 @@ export default function Navbar() {
             <Link onClick={() => setIsOpen(false)} href="https://mail.docconmigo.com/webmail" target="_blank" rel="noopener noreferrer" className="text-xl font-medium py-2 border-b border-gray-50">Webmail</Link>
             <Link 
               onClick={() => setIsOpen(false)}
-              href="/#contacto" 
+              href="/formulario" 
               className="bg-primary text-white px-6 py-4 rounded-xl text-center text-xl font-bold shadow-lg"
             >
               Agendar cita
