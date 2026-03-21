@@ -1,6 +1,12 @@
+"use client";
+
+import { usePathname } from 'next/navigation';
 import { MessageCircle } from 'lucide-react';
 
 export default function WhatsAppButton() {
+  const pathname = usePathname();
+  if (pathname === '/formulario') return null;
+
   const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '573024645050';
   const waLink = `https://wa.me/${phoneNumber}`;
 
@@ -19,3 +25,4 @@ export default function WhatsAppButton() {
     </a>
   );
 }
+
