@@ -36,6 +36,8 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  if (isFormPage) return null;
+
   return (
     <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${
       isScrolled ? 'bg-white/95 backdrop-blur shadow-sm' : 'bg-white/30 backdrop-blur-lg border-b border-white/20'

@@ -206,6 +206,14 @@ export default function FormularioTypeform() {
         />
       </div>
 
+      {/* Logo Header */}
+      <div className="fixed top-1 left-0 w-full z-50 px-6 py-3 flex justify-center md:justify-start">
+        <a href="/">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-docconmigo-web.png" alt="docconmigo" className="h-14 w-auto object-contain" />
+        </a>
+      </div>
+
       {/* Main Content */}
       <div className="flex-grow flex items-center justify-center p-8 pt-40">
         <div className="w-full max-w-2xl">
