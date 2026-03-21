@@ -37,7 +37,7 @@ export default function HeroSection() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link 
-              href="/#contacto" 
+              href="/formulario" 
               className="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-full text-base font-semibold shadow-lg hover:shadow-xl transition-all flex items-center gap-2 group w-full sm:w-auto justify-center"
             >
               Agendar cita
