@@ -140,7 +140,6 @@ export default function FormularioTypeform() {
     msg += `*Inversión:* ${answers['inversion'] || '—'}\n`;
     msg += `*Modalidad:* ${answers['preferencia_modalidad'] || '—'}\n`;
     if (answers['motivacion_extra']) msg += `\n*Motivación:* ${answers['motivacion_extra']}`;
-    if (isHotLead) msg += `\n\n🔥 Lead de Alta Prioridad`;
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
