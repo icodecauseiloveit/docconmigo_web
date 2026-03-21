@@ -70,9 +70,9 @@ const questions: Question[] = [
   {
     id: 8,
     type: 'radio',
-    question: "¿Prefieres consulta virtual o presencial?",
+    question: "La consulta se realiza de forma 100% virtual. ¿Puedes atender la videollamada por Google Meet?",
     key: 'preferencia_modalidad',
-    options: ["Virtual", "Presencial", "Indiferente"]
+    options: ["Sí, no tengo problema con que sea virtual", "Preferiría que fuera presencial"]
   },
   {
     id: 9,
