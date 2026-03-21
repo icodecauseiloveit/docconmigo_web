@@ -133,6 +133,8 @@ export default function FormularioTypeform() {
     const phone = "573025261619";
     const nombre = answers['nombre'] || "Paciente";
     let msg = `Hola docconmigo, soy *${nombre}*. Completé el formulario en la web:\n\n`;
+    msg += `*WhatsApp:* ${answers['whatsapp'] || '—'}\n`;
+    msg += `*Email:* ${answers['email'] || '—'}\n`;
     msg += `*Problema:* ${answers['objetivo_salud'] || '—'}\n`;
     msg += `*Tiempo:* ${answers['tiempo_problema'] || '—'}\n`;
     msg += `*Compromiso:* ${answers['compromiso'] || '—'}\n`;
