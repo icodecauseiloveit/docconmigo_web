@@ -62,7 +62,7 @@ export default function Navbar() {
         {/* Partial Mobile/Tablet Nav (Screen > 768px & < 1024px) - Logo + Button only */}
         <div className="hidden md:flex lg:hidden gap-4 items-center">
            <Link 
-            href="/#contacto" 
+            href="/formulario" 
             className="bg-primary hover:bg-secondary text-white px-6 py-2.5 rounded-xl text-md font-bold transition-all shadow-sm"
           >
             Agendar cita
