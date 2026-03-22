@@ -2,14 +2,29 @@
 
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+function getSupabaseAdmin() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-// Use service role on the server for bypass RLS if needed, although it depends on your policies
-const supabaseAdmin = createClient(supabaseUrl, supabaseServiceRoleKey);
+  if (!supabaseUrl || !supabaseServiceRoleKey) {
+    console.error('Supabase configuration missing:', {
+      url: supabaseUrl ? 'PRESENT' : 'MISSING',
+      key: supabaseServiceRoleKey ? 'PRESENT' : 'MISSING'
+    });
+    return null;
+  }
+
+  return createClient(supabaseUrl, supabaseServiceRoleKey);
+}
 
 export async function saveFormSubmission(answers: Record<string, string>, isHotLead: boolean) {
   try {
+    const supabaseAdmin = getSupabaseAdmin();
+    
+    if (!supabaseAdmin) {
+      return { success: false, error: 'Database configuration missing on server' };
+    }
+
     const { data, error } = await supabaseAdmin
       .from('clientes_formulario')
       .insert([
@@ -28,16 +43,19 @@ export async function saveFormSubmission(answers: Record<string, string>, isHotL
           motivacion_extra: answers['motivacion_extra'],
           is_hot_lead: isHotLead,
         },
-      ]);
+      ])
+      .select();
 
     if (error) {
       console.error('Error saving to Supabase:', error);
       return { success: false, error: error.message };
     }
 
+    console.log('Form saved to Supabase successfully:', data?.[0]?.id);
     return { success: true, data };
   } catch (err) {
     console.error('Exception saving to Supabase:', err);
     return { success: false, error: 'Internal server error' };
   }
 }
+
