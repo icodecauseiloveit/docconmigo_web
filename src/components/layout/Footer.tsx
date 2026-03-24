@@ -15,9 +15,13 @@ export default function Footer() {
         <div>
           <h3 className="font-bold mb-4 text-lg">Navegación</h3>
           <ul className="space-y-2 text-sm text-gray-200">
-            <li><Link href="/" className="hover:text-accent transition-colors">Inicio</Link></li>
-            <li><Link href="/#servicios" className="hover:text-accent transition-colors">Servicios</Link></li>
-            <li><Link href="/#contacto" className="hover:text-accent transition-colors">Contacto</Link></li>
+            <li><Link href="#" className="hover:text-blue-300 transition-colors">Inicio</Link></li>
+            <li><Link href="#pain-points" className="hover:text-blue-300 transition-colors">¿Qué te ocurre?</Link></li>
+            <li><Link href="#beneficios" className="hover:text-blue-300 transition-colors">Mi Proceso</Link></li>
+            <li><Link href="#social-proof" className="hover:text-blue-300 transition-colors">Testimonios</Link></li>
+            <li><Link href="#sobre-mi" className="hover:text-blue-300 transition-colors">Sobre mí</Link></li>
+            <li><Link href="#faq" className="hover:text-blue-300 transition-colors">Preguntas Frecuentes</Link></li>
+            <li><Link href="#contacto" className="hover:text-blue-300 transition-colors">Contacto</Link></li>
           </ul>
         </div>
 

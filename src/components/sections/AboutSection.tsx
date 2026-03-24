@@ -1,4 +1,4 @@
-import { Leaf } from 'lucide-react';
+import { Globe, ShieldCheck, Apple, HeartHandshake } from 'lucide-react';
 
 export default function AboutSection() {
   return (
@@ -6,59 +6,48 @@ export default function AboutSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-sm font-bold tracking-wider text-accent uppercase mb-2">Sobre nuestro enfoque</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-secondary mb-6">Medicina que te entiende</h3>
+            <h2 className="text-sm font-bold tracking-wider text-accent uppercase mb-2">Lo Que Te Llevas</h2>
+            <h3 className="text-3xl md:text-5xl font-serif text-secondary mb-6">No es solo una consulta. Es un antes y un después.</h3>
             <p className="text-gray-600 text-lg leading-relaxed">
-              En docconmigo creemos que la salud es más que la ausencia de enfermedad. Es un estado de vitalidad, claridad mental y equilibrio emocional que surge cuando le damos al cuerpo lo que necesita y quitamos lo que le hace daño.
+              Esto es lo que mis pacientes valoran más del proceso conmigo.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 relative rounded-2xl overflow-hidden shadow-2xl bg-gray-100 aspect-square flex flex-col items-center justify-center p-8 text-center border-4 border-white">
-              <Leaf className="w-24 h-24 text-accent mb-6" strokeWidth={1.5} />
-              <h4 className="text-2xl font-bold text-secondary mb-4">La salud es integral</h4>
-              <p className="text-gray-600">
-                Tu alimentación, tu descanso, tu nivel de estrés, tus emociones, tus relaciones y tu entorno: todo influye en cómo te sientes hoy. 
-              </p>
-            </div>
-
-            <div className="order-1 md:order-2 space-y-8">
-              <div className="flex gap-4 items-start">
-                <div className="mt-1 bg-blue-50 p-3 rounded-xl">
-                  <span className="font-bold text-primary text-xl">01</span>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            {[
+              {
+                icon: <Globe className="w-8 h-8 text-primary" />,
+                title: "Cero desplazamientos",
+                desc: "Desde tu casa, tu oficina o donde estés. Solo necesitas internet. Atiendo pacientes de toda Colombia y el exterior."
+              },
+              {
+                icon: <ShieldCheck className="w-8 h-8 text-primary" />,
+                title: "Voy a la raíz, no al parche",
+                desc: "No te voy a dar otra pastilla para callar los síntomas. Investigo qué los está causando para resolverlos de verdad."
+              },
+              {
+                icon: <Apple className="w-8 h-8 text-primary" />,
+                title: "Tu alimentación como medicina",
+                desc: "Mi énfasis es transformar tu salud a través de lo que comes. Cambios de hábitos reales, sostenibles y adaptados a tu vida."
+              },
+              {
+                icon: <HeartHandshake className="w-8 h-8 text-primary" />,
+                title: "Una doctora que te escucha",
+                desc: "Mantengo una relación cercana con cada paciente. No eres un número: te veo como una persona completa, no como un síntoma."
+              }
+            ].map((item, i) => (
+              <div key={i} className="flex gap-6 items-start bg-[#faf8f4] p-8 rounded-2xl border border-transparent hover:border-primary/20 hover:shadow-lg transition-all">
+                <div className="mt-1 bg-white p-3 rounded-xl shadow-sm flex-shrink-0">
+                  {item.icon}
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-secondary mb-2">Evaluación completa</h4>
-                  <p className="text-gray-600">
-                    No nos quedamos con el análisis de sangre básico. Exploramos tu historia desde el vientre materno hasta hoy.
+                  <h4 className="text-xl font-bold text-secondary mb-3">{item.title}</h4>
+                  <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                    {item.desc}
                   </p>
                 </div>
               </div>
-
-              <div className="flex gap-4 items-start">
-                <div className="mt-1 bg-green-50 p-3 rounded-xl">
-                  <span className="font-bold text-accent text-xl">02</span>
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-secondary mb-2">Planes adaptables</h4>
-                  <p className="text-gray-600">
-                    Co-creamos un plan de acción que sí puedas mantener a largo plazo, adaptado a tu estilo de vida y posibilidades.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4 items-start">
-                <div className="mt-1 bg-blue-50 p-3 rounded-xl">
-                  <span className="font-bold text-primary text-xl">03</span>
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-secondary mb-2">Educación constante</h4>
-                  <p className="text-gray-600">
-                    Queremos que entiendas tu cuerpo. Un paciente educado es un paciente empoderado que toma mejores decisiones.
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

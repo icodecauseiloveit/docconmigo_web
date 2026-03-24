@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Luci Cortez — Medicina Funcional Virtual | Consulta Personalizada</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #5a7a64;
+    --sage-dark: #3d5a45;
+    --sage-deep: #2c4333;
+    --sage-light: #e8f0ea;
+    --sage-muted: #a3bfab;
+    --cream: #faf8f4;
+    --cream-warm: #f5f0e8;
+    --text: #2a2a2a;
+    --text-light: #6b6b6b;
+    --white: #ffffff;
+    --gold: #c4a265;
+    --gold-light: #f5eedf;
+    --whatsapp: #25d366;
+    --whatsapp-hover: #1fb855;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+    --radius: 16px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ===================== ANIMATIONS ===================== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  @keyframes slideRight {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .animate-up {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+  }
+
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+  .delay-5 { animation-delay: 0.5s; }
+  .delay-6 { animation-delay: 0.6s; }
+
+  /* ===================== NAVBAR ===================== */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 16px 24px;
+    transition: all 0.3s ease;
+    background: transparent;
+  }
+
+  .navbar.scrolled {
+    background: rgba(250, 248, 244, 0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-sm);
+    padding: 12px 24px;
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--sage-deep);
+    text-decoration: none;
+  }
+
+  .nav-cta {
+    background: var(--sage);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-cta:hover {
+    background: var(--sage-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* ===================== HERO ===================== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -15%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(90,122,100,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(196,162,101,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--sage-light);
+    color: var(--sage-dark);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--sage);
+    border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5.5vw, 56px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--sage-deep);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--sage);
+  }
+
+  .hero-desc {
+    font-size: 18px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 480px;
+    font-weight: 300;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--whatsapp);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  }
+
+  .btn-whatsapp:hover {
+    background: var(--whatsapp-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+  }
+
+  .btn-whatsapp svg {
+    width: 22px;
+    height: 22px;
+    fill: white;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--sage-dark);
+    padding: 16px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border: 2px solid var(--sage-muted);
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--sage);
+    background: var(--sage-light);
+  }
+
+  .hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+    color: var(--text-light);
+  }
+
+  .hero-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hero-trust-item svg {
+    width: 18px;
+    height: 18px;
+    color: var(--sage);
+  }
+
+  /* Hero Visual */
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 50px;
+  }
+
+  .hero-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .hero-card-photo {
+    width: 100%;
+    height: 260px;
+    background: linear-gradient(135deg, var(--sage-light) 0%, var(--cream-warm) 100%);
+    border-radius: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--sage);
+    font-weight: 500;
+    text-align: center;
+    padding: 20px;
+    border: 2px dashed var(--sage-muted);
+  }
+
+  .hero-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--sage-deep);
+    margin-bottom: 4px;
+  }
+
+  .hero-card p {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .hero-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .hero-card-tag {
+    background: var(--sage-light);
+    color: var(--sage-dark);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .floating-badge {
+    position: absolute;
+    background: white;
+    border-radius: 14px;
+    padding: 12px 16px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  .floating-badge.top-right {
+    top: -20px;
+    right: -50px;
+    animation-delay: 0.8s;
+    opacity: 0;
+  }
+
+  .floating-badge.bottom-left {
+    bottom: -15px;
+    left: -50px;
+    animation-delay: 1s;
+    opacity: 0;
+  }
+
+  .badge-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .badge-icon.green { background: var(--sage-light); }
+  .badge-icon.gold { background: var(--gold-light); }
+
+  /* ===================== PROBLEMS ===================== */
+  .problems {
+    padding: 80px 24px;
+    background: var(--white);
+  }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .section-overline {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 12px;
+  }
+
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 600;
+    color: var(--sage-deep);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .section-header p {
+    color: var(--text-light);
+    font-size: 17px;
+    max-width: 550px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+
+  .problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .problem-card {
+    background: var(--cream);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+  }
+
+  .problem-card:hover {
+    border-color: var(--sage-muted);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .problem-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--sage-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .problem-card h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--sage-deep);
+  }
+
+  .problem-card p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  /* ===================== HOW IT WORKS ===================== */
+  .how-it-works {
+    padding: 80px 24px;
+    background: var(--cream);
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    position: relative;
+  }
+
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 15%;
+    right: 15%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--sage-muted), var(--sage), var(--sage-muted));
+    opacity: 0.3;
+  }
+
+  .step {
+    text-align: center;
+    position: relative;
+  }
+
+  .step-number {
+    width: 64px;
+    height: 64px;
+    background: var(--white);
+    border: 3px solid var(--sage);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--sage-dark);
+    position: relative;
+    z-index: 2;
+  }
+
+  .step h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--sage-deep);
+  }
+
+  .step p {
+    font-size: 14px;
+    color: var(--text-light);
+    max-width: 260px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ===================== BENEFITS ===================== */
+  .benefits {
+    padding: 80px 24px;
+    background: linear-gradient(135deg, var(--sage-deep) 0%, var(--sage-dark) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .benefits::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .benefits .section-overline { color: var(--sage-muted); }
+  .benefits .section-header h2 { color: white; }
+  .benefits .section-header p { color: rgba(255,255,255,0.7); }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+  }
+
+  .benefit-item {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: all 0.3s ease;
+  }
+
+  .benefit-item:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-4px);
+  }
+
+  .benefit-icon {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+
+  .benefit-item h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .benefit-item p {
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 1.6;
+  }
+
+  /* ===================== TESTIMONIALS ===================== */
+  .testimonials {
+    padding: 80px 24px;
+    background: var(--white);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .testimonial {
+    background: var(--cream);
+    border-radius: var(--radius);
+    padding: 32px;
+    position: relative;
+  }
+
+  .testimonial::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    color: var(--sage-muted);
+    position: absolute;
+    top: 16px;
+    left: 24px;
+    line-height: 1;
+    opacity: 0.4;
+  }
+
+  .testimonial-text {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .testimonial-avatar {
+    width: 44px;
+    height: 44px;
+    background: var(--sage-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--sage-dark);
+    font-size: 16px;
+  }
+
+  .testimonial-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--sage-deep);
+  }
+
+  .testimonial-detail {
+    font-size: 13px;
+    color: var(--text-light);
+  }
+
+  .testimonial-stars {
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* ===================== DOCTOR ===================== */
+  .doctor {
+    padding: 80px 24px;
+    background: var(--cream);
+  }
+
+  .doctor-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .doctor-photo {
+    width: 280px;
+    height: 340px;
+    background: linear-gradient(135deg, var(--sage-light) 0%, var(--cream-warm) 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--sage);
+    font-weight: 500;
+    text-align: center;
+    padding: 20px;
+    border: 2px dashed var(--sage-muted);
+  }
+
+  .doctor-info .section-overline { text-align: left; }
+
+  .doctor-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--sage-deep);
+    margin-bottom: 16px;
+  }
+
+  .doctor-info p {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .doctor-credentials {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .credential {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .credential-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--sage-light);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  /* ===================== FAQ ===================== */
+  .faq {
+    padding: 80px 24px;
+    background: var(--white);
+  }
+
+  .faq-list {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #e8e5df;
+    padding: 20px 0;
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--sage-deep);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    transition: color 0.2s;
+  }
+
+  .faq-question:hover { color: var(--sage); }
+
+  .faq-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--sage-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--sage);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+    padding-top: 14px;
+  }
+
+  /* ===================== FINAL CTA ===================== */
+  .final-cta {
+    padding: 80px 24px;
+    background: var(--cream);
+    text-align: center;
+  }
+
+  .cta-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 24px;
+    padding: 48px 40px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--sage), var(--gold), var(--sage));
+  }
+
+  .cta-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: var(--sage-deep);
+    margin-bottom: 12px;
+  }
+
+  .cta-box p {
+    color: var(--text-light);
+    font-size: 16px;
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+
+  .cta-box .btn-whatsapp {
+    font-size: 17px;
+    padding: 18px 40px;
+  }
+
+  .cta-note {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--text-light);
+  }
+
+  /* ===================== WHATSAPP FLOATING ===================== */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 60px;
+    height: 60px;
+    background: var(--whatsapp);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 99;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+  }
+
+  .whatsapp-float svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+  }
+
+  /* ===================== FOOTER ===================== */
+  .footer {
+    padding: 32px 24px;
+    background: var(--sage-deep);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .footer a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+  }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 768px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      text-align: center;
+    }
+
+    .hero-desc { margin: 0 auto 32px; }
+    .hero-ctas { justify-content: center; }
+    .hero-trust { justify-content: center; flex-wrap: wrap; }
+
+    .hero-visual { order: -1; }
+    .hero-card { max-width: 320px; margin: 0 auto; }
+
+    .floating-badge.top-right { right: 10px; top: -15px; }
+    .floating-badge.bottom-left { left: 10px; bottom: -10px; }
+
+    .steps {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .steps::before { display: none; }
+
+    .doctor-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .doctor-photo {
+      margin: 0 auto;
+      width: 220px;
+      height: 280px;
+    }
+
+    .doctor-info .section-overline { text-align: center; }
+    .doctor-credentials { align-items: center; }
+
+    .cta-box { padding: 36px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Dra. Luci Cortez</a>
+    <a href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20quiero%20agendar%20una%20consulta%20de%20medicina%20funcional" class="nav-cta">Agendar Consulta</a>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge animate-up">Consulta 100% Virtual — Desde Cualquier Ciudad</div>
+      <h1 class="animate-up delay-1">16 años de experiencia médica para encontrar <em>la causa real</em> de lo que sientes.</h1>
+      <p class="hero-desc animate-up delay-2">En lugar de darte otra receta que tapa síntomas, analizo tu alimentación, hábitos y estilo de vida para diseñar un plan que ataque el origen del problema. Todo por videollamada, sin filas, sin desplazamientos.</p>
+      <div class="hero-ctas animate-up delay-3">
+        <a href="https://wa.me/57XXXXXXXXXX?text=Hola%20Dra.%20Luci%2C%20quiero%20agendar%20una%20consulta%20de%20medicina%20funcional" class="btn-whatsapp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Escribir por WhatsApp →
+        </a>
+        <a href="#como-funciona" class="btn-secondary">Ver cómo funciona ↓</a>
+      </div>
+      <div class="hero-trust animate-up delay-4">
+        <div class="hero-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Médica certificada — Reg. 9724
+        </div>
+        <div class="hero-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          16 años de experiencia clínica
+        </div>
+        <div class="hero-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          6 años en medicina funcional
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual animate-up delay-3">
+      <div class="hero-card">
+        <div class="hero-card-photo">📷 Tu foto profesional aquí<br>(recomendado: 400×260px)</div>
+        <h3>Dra. Luci Cortez</h3>
+        <p>Médica Funcional · Máster en Nutrición</p>
+        <div class="hero-card-tags">
+          <span class="hero-card-tag">Medicina Funcional</span>
+          <span class="hero-card-tag">Nutrición y Epigenética</span>
+          <span class="hero-card-tag">Cambio de Hábitos</span>
+        </div>
+      </div>
+      <div class="floating-badge top-right">
+        <div class="badge-icon green">🩺</div>
+        <span>100% Virtual</span>
+      </div>
+      <div class="floating-badge bottom-left">
+        <div class="badge-icon gold">⭐</div>
+        <span>5.0 — Pacientes reales</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROBLEMS ========== -->
+<section class="problems">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-overline">¿Esto Te Suena Familiar?</div>
+      <h2>Llevas meses (o años) así y nadie te da respuestas claras</h2>
+      <p>Si ya fuiste a varios médicos, te hicieron exámenes "normales" y sigues sintiéndote mal... no estás loco(a). Solo necesitas un enfoque diferente.</p>
+    </div>
+    <div class="problems-grid">
+      <div class="problem-card">
+        <div class="problem-icon">😴</div>
+        <h3>Fatiga que no se va</h3>
+        <p>Duermes 8 horas y te levantas destruido(a). El café ya no funciona. Te dicen que "es estrés" pero tú sabes que algo más está pasando.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🫄</div>
+        <h3>Tu digestión es un caos</h3>
+        <p>Hinchazón después de cada comida, gases, estreñimiento o diarrea. Ya no sabes qué comer sin que te caiga mal.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">⚖️</div>
+        <h3>Hormonas descontroladas</h3>
+        <p>Irregularidades menstruales, tiroides inestable, cambios de ánimo extremos o peso que sube sin razón aparente.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🧠</div>
+        <h3>Niebla mental constante</h3>
+        <p>No puedes concentrarte, se te olvidan cosas, sientes que tu cabeza no rinde como antes. Y la ansiedad no ayuda.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🔬</div>
+        <h3>Condiciones autoinmunes</h3>
+        <p>Te diagnosticaron una enfermedad autoinmune y solo te ofrecen medicamentos de por vida, pero nunca te explican el porqué.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🌱</div>
+        <h3>Quieres prevenir, no esperar</h3>
+        <p>No estás "enfermo(a)" pero tampoco te sientes bien. Quieres tomar el control de tu salud antes de que algo falle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== HOW IT WORKS ========== -->
+<section class="how-it-works" id="como-funciona">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-overline">Así De Simple</div>
+      <h2>De "no sé qué me pasa" a un plan claro en 3 pasos</h2>
+      <p>Sin filas, sin desplazamientos, sin perder el día entero en una sala de espera.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Escríbeme por WhatsApp</h3>
+        <p>Me cuentas brevemente qué sientes, coordinamos un horario y te envío un formulario previo para no perder ni un minuto.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Consulta a fondo por videollamada</h3>
+        <p>Revisamos tu historia clínica, alimentación, hábitos de sueño, estrés y todo lo que influye en tu salud. Esto no es una consulta de 10 minutos.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Tu plan personalizado + seguimiento</h3>
+        <p>Recibes un protocolo concreto: qué comer, qué cambiar, qué suplementar. Y te acompaño para que realmente lo cumplas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BENEFITS ========== -->
+<section class="benefits">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-overline">Lo Que Te Llevas</div>
+      <h2>No es solo una consulta. Es un antes y un después.</h2>
+      <p>Esto es lo que mis pacientes valoran más del proceso conmigo.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-icon">🏠</div>
+        <h3>Cero desplazamientos</h3>
+        <p>Desde tu casa, tu oficina o donde estés. Solo necesitas internet. Atiendo pacientes de toda Colombia y el exterior.</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🔍</div>
+        <h3>Voy a la raíz, no al parche</h3>
+        <p>No te voy a dar otra pastilla para callar los síntomas. Investigo qué los está causando para resolverlos de verdad.</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🍽️</div>
+        <h3>Tu alimentación como medicina</h3>
+        <p>Mi énfasis es transformar tu salud a través de lo que comes. Cambios de hábitos reales, sostenibles y adaptados a tu vida.</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🤝</div>
+        <h3>Una doctora que te escucha</h3>
+        <p>Mantengo una relación cercana con cada paciente. No eres un número: te veo como una persona completa, no como un síntoma.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="testimonials">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-overline">No Me Creas A Mí — Escúchalos A Ellos</div>
+      <h2>Pacientes reales, resultados reales</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p class="testimonial-text">[Reemplaza con un testimonio real de tu paciente. Ej: "Después de años con problemas digestivos que nadie podía resolver, encontré respuestas reales. Mi plan personalizado cambió mi calidad de vida."]</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">M</div>
+          <div>
+            <div class="testimonial-name">[Nombre del paciente]</div>
+            <div class="testimonial-detail">[Ciudad] · Paciente desde [año]</div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">[Reemplaza con otro testimonio real. Ej: "La consulta virtual fue súper cómoda y profesional. El doctor(a) se tomó el tiempo de entender mi caso a fondo. Recomendado 100%."]</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">C</div>
+          <div>
+            <div class="testimonial-name">[Nombre del paciente]</div>
+            <div class="testimonial-detail">[Ciudad] · Paciente desde [año]</div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">[Tercer testimonio. Ej: "Tenía fatiga crónica y desequilibrio hormonal. Con el enfoque funcional empecé a sentir cambios reales en pocas semanas."]</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">L</div>
+          <div>
+            <div class="testimonial-name">[Nombre del paciente]</div>
+            <div class="testimonial-detail">[Ciudad] · Paciente desde [año]</div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DOCTOR ========== -->
+<section class="doctor">
+  <div class="section-inner">
+    <div class="doctor-inner">
+      <div class="doctor-photo">📷 Tu foto profesional aquí<br>(recomendado: 280×340px)</div>
+      <div class="doctor-info">
+        <div class="section-overline">Tu Médica</div>
+        <h2>Dra. Luci Cortez</h2>
+        <p>Después de 16 años en el sistema hospitalario, entendí algo que cambió mi carrera: la mayoría de los pacientes no necesitan más medicamentos — necesitan que alguien se tome el tiempo de escucharlos, investigar a fondo y trabajar en lo que realmente está fallando.</p>
+        <p>Soy médica de la Universidad de Cartagena con un Máster en Nutrición de Precisión y Epigenética (UNIR). Llevo 6 años dedicada a la medicina funcional, donde mi enfoque es claro: transformar tu salud a través del cambio de hábitos, especialmente tu alimentación. No te veo como un síntoma que resolver — te veo como una persona completa, y así te trato.</p>
+        <p style="font-weight:500; color: var(--sage-dark);">Mi compromiso es ser cercana, honesta y acompañarte en cada paso. Porque cuando entiendes tu cuerpo y cambias lo que comes, los resultados llegan — y se quedan.</p>
+        <div class="doctor-credentials">
+          <div class="credential">
+            <div class="credential-icon">🎓</div>
+            Médica — Universidad de Cartagena
+          </div>
+          <div class="credential">
+            <div class="credential-icon">📜</div>
+            Máster en Nutrición de Precisión y Epigenética — UNIR
+          </div>
+          <div class="credential">
+            <div class="credential-icon">⏱️</div>
+            16 años de experiencia clínica · 6 en medicina funcional
+          </div>
+          <div class="credential">
+            <div class="credential-icon">🏥</div>
+            Registro médico: 9724
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="faq">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-overline">Antes De Decidir</div>
+      <h2>Preguntas que probablemente tienes</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Qué es la medicina funcional?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Es un enfoque médico que en vez de darte un medicamento para cada síntoma, investiga por qué te sientes así en primer lugar. Analizo tu alimentación, estilo de vida, genética y entorno para armar un plan que ataque la causa real — no solo el síntoma.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Cómo es una consulta virtual?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Nos conectamos por videollamada (Zoom, Google Meet o lo que prefieras). Antes de la cita te envío un formulario detallado de historia clínica para que en la consulta vayamos directo a lo importante. No es una consulta de 10 minutos — me tomo el tiempo necesario para entender tu caso a fondo.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Cuánto cuesta la consulta?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">[PERSONALIZA: Incluye aquí tu tarifa real. Ej: "La primera valoración tiene un costo de $XXX.XXX COP e incluye evaluación completa + plan personalizado. Los controles de seguimiento son de $XXX.XXX COP." — Hormozi dice: muestra el valor, no solo el precio.]</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Necesito exámenes previos?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">No necesariamente. Si tienes exámenes recientes, envíamelos antes de la cita para revisarlos. Si no tienes, no pasa nada — en la consulta evaluamos si necesitas análisis específicos de laboratorio funcional.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Atienden desde fuera de Colombia?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Sí. Al ser 100% virtual, atiendo pacientes en cualquier país. Solo necesitas conexión a internet y ganas de tomar el control de tu salud.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Cuánto tiempo tarda en verse resultados?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Muchos pacientes notan cambios en las primeras 2-4 semanas cuando se comprometen con el plan. Condiciones más crónicas requieren más tiempo, pero lo importante es que no vas a estar solo(a): te acompaño con seguimiento constante y ajustes según tu evolución.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FINAL CTA ========== -->
+<section class="final-cta">
+  <div class="section-inner">
+    <div class="cta-box">
+      <h2>Cada día que pospones es un día más sintiéndote igual.</h2>
+      <p>No necesitas otro medicamento. Necesitas que alguien investigue de verdad qué está pasando en tu cuerpo. Escríbeme y empecemos.</p>
+      <a href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20quiero%20agendar%20una%20consulta%20de%20medicina%20funcional" class="btn-whatsapp">
+        <svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:white;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Agendar mi consulta
+      </a>
+      <p class="cta-note">Atención para mayores de 18 años · Respuesta en menos de 24 horas</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHATSAPP FLOATING ========== -->
+<a href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20quiero%20agendar%20una%20consulta%20de%20medicina%20funcional" class="whatsapp-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <p>© 2026 Dra. Luci Cortez — Medicina Funcional Virtual · Reg. Médico 9724 · <a href="#">Política de Privacidad</a></p>
+</footer>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
+    });
+  });
+
+  // Scroll animations (Intersection Observer)
+  const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -40px 0px' };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.problem-card, .step, .benefit-item, .testimonial').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
