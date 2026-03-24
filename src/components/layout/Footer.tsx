@@ -1,7 +1,15 @@
+"use client";
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isFormPage = pathname === '/formulario';
+
+  if (isFormPage) return null;
+
   return (
     <footer className="bg-[#000917] text-white py-12">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">

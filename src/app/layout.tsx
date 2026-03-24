@@ -10,9 +10,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://docconmigo.com"),
-  title: "Le damos a tu salud el tiempo, la atención y la profundidad que realmente merece",
-  description: "No nos enfocamos solo en tus síntomas; exploramos también tu entorno, hábitos y estilo de vida. Por eso nos tomamos el tiempo necesario para conocerte a profundidad y llegar a la raíz de tu condición.",
-  keywords: ["medicina funcional", "nutrición integral", "bienestar sostenible", "salud desde la raíz", "consulta médica personalizada", "medicina alternativa", "docconmigo", "hábitos saludables", "atención integral"],
+  title: "Docconmigo - Medicina Funcional desde la raíz",
+  description: "Enfoque médico integral que investiga la causa real de tus síntomas. Salud personalizada y hábitos sostenibles con la Dra. Luci Cortez.",
+  keywords: ["medicina funcional", "causa raíz", "diagnóstico funcional", "nutrición de precisión", "salud integral", "bienestar sostenible", "Dra. Luci Cortez", "docconmigo", "hábitos saludables"],
   authors: [{ name: "docconmigo" }],
   creator: "docconmigo",
   publisher: "docconmigo",
