@@ -25,9 +25,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "Tu salud merece más que una consulta rápida",
     description: "No nos enfocamos solo en tus síntomas; exploramos también tu entorno, hábitos y estilo de vida. Por eso nos tomamos el tiempo necesario para conocerte a profundidad y llegar a la raíz de tu condición.",
