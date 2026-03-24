@@ -25,10 +25,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  icons: { 
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+  alternates: {
+    canonical: "/",
   },
   openGraph: {
     title: "Tu salud merece más que una consulta rápida",
@@ -92,9 +90,6 @@ export default function RootLayout({
             gtag('config', 'AW-11227942442');
           `}
         </Script>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/favicon.ico" />
       </head>
       <body className={`${inter.className} min-h-screen flex flex-col`} suppressHydrationWarning={true}>
         <Navbar />
