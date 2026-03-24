@@ -2,7 +2,7 @@ import { Globe, ShieldCheck, Apple, HeartHandshake } from 'lucide-react';
 
 export default function AboutSection() {
   return (
-    <section className="py-24 bg-white">
+    <section id="lo-que-te-llevas" className="py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
