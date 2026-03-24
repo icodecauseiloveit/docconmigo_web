@@ -27,7 +27,7 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-black text-primary tracking-tighter mb-8 relative leading-tight">
-            Tu cuerpo te habla... <br className="hidden md:block"/>Yo te ayudo a entenderlo
+            Tu cuerpo te habla... <br />Yo te ayudo a entenderlo
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-highlight rounded-full"></div>
           </h1>
           
