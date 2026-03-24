@@ -48,7 +48,7 @@ export default function Home() {
       initial: "E",
       image: "/testim-3.png",
       title: "Elena M.",
-      subtitle: "Cali • Paciente desde 2024",
+      subtitle: "Miami, FL • Paciente desde 2024",
       description: "Tenía fatiga crónica y desequilibrio hormonal. Con el enfoque funcional empecé a sentir cambios reales en pocas semanas.",
       stars: 5,
       number: "“"
