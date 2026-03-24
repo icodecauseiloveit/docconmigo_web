@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   icons: { 
-    icon: '/dcm.ico',
-    shortcut: '/dcm.ico',
-    apple: '/dcm.ico',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
   openGraph: {
     title: "Tu salud merece más que una consulta rápida",
